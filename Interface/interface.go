@@ -12,7 +12,7 @@ type triangulo struct {
 }
 
 func (c circulo) area() float64 {
-	return 3.14 * c.R * c.R
+	return 3.14 * c.R * c.R * c.R
 }
 
 func (t triangulo) area() float64 {
