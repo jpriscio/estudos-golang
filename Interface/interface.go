@@ -3,8 +3,7 @@ package main
 import "fmt"
 
 type circulo struct {
-	pi float64
-	R  float64
+	R float64
 }
 
 type triangulo struct {
@@ -13,15 +12,11 @@ type triangulo struct {
 }
 
 func (c circulo) area() float64 {
-	area := 0.0
-	c.pi = 3.14
-	area = c.pi * (c.R * 2)
-	return area
+	return 3.14 * c.R * c.R
 }
 
 func (t triangulo) area() float64 {
-	area := t.base * t.altura / 2
-	return area
+	return t.base * t.altura
 }
 
 type areas interface {
@@ -34,19 +29,14 @@ func maiorarea(t, b areas) areas {
 	} else {
 		return b
 	}
+
 }
 
 func main() {
 
-	bola := circulo{
-		pi: 3.14,
-		R:  10,
-	}
+	bola := circulo{R: 1}
 
-	tri := triangulo{
-		base:   14,
-		altura: 10,
-	}
+	tri := triangulo{base: 14, altura: 10}
 
 	fmt.Println(maiorarea(bola, tri).area())
 
